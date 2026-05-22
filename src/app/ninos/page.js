@@ -180,7 +180,7 @@ export default function NinosPage() {
   return (
     <>
       <div className="topbar">
-        <h1>Ninos</h1>
+        <h1>Niños</h1>
         {canEdit && <button className="btn btn-primary" onClick={() => { setModal(true); setPaso(1); }}>+ Registrar Nino</button>}
       </div>
       <div
@@ -233,14 +233,17 @@ export default function NinosPage() {
       <div className="table-container">
         <table>
           <thead>
-            <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Nacimiento</th><th>Genero</th><th>Grupo</th><th>Acciones</th></tr>
+            <tr>
+              {/* <th>ID</th> */}
+              <th>Nombre</th><th>Apellido</th><th>Nacimiento</th><th>Genero</th><th>Grupo</th><th>Acciones</th></tr>
           </thead>
           <tbody>
             {ninosFiltrados.length === 0 ? (
               <tr><td colSpan={7} className="empty-state">No hay ninos registrados</td></tr>
             ) : ninosFiltrados.map(n => (
               <tr key={n.id}>
-                <td>{n.id}</td><td>{n.nombre}</td><td>{n.apellido}</td>
+                {/* <td>{n.id}</td> */}
+                <td>{n.nombre}</td><td>{n.apellido}</td>
                 <td>{n.fecha_nacimiento}</td>
                 <td><span className="badge badge-blue">{n.genero}</span></td>
                 <td><span className="badge badge-green">{n.grupo}</span></td>

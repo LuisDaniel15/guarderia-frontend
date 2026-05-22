@@ -50,14 +50,17 @@ export default function AcudientesPage() {
       <div className="table-container">
         <table>
           <thead>
-            <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Email</th><th>Relacion</th><th>Acciones</th></tr>
+            <tr>
+              {/* <th>ID</th> */}
+              <th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Email</th><th>Relacion</th><th>Acciones</th></tr>
           </thead>
           <tbody>
             {items.length === 0 ? (
               <tr><td colSpan={7} className="empty-state">No hay acudientes registrados</td></tr>
             ) : items.map(i => (
               <tr key={i.id}>
-                <td>{i.id}</td><td>{i.nombre}</td><td>{i.apellido}</td>
+                {/* <td>{i.id}</td> */}
+                <td>{i.nombre}</td><td>{i.apellido}</td>
                 <td>{i.telefono}</td><td>{i.email}</td>
                 <td><span className="badge badge-blue">{i.relacion}</span></td>
                 <td style={{ display: 'flex', gap: '6px' }}>
