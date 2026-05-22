@@ -17,6 +17,7 @@ export default function NotificacionesPage() {
   const fetchData = async () => {
     const res = await fetch(`${API_URL}/notificaciones/get_notificaciones`);
     setItems(await res.json());
+    console.log(items)
   };
 
   const handleSubmit = async (e) => {
@@ -28,6 +29,7 @@ export default function NotificacionesPage() {
   };
 
   const handleDelete = async (id) => {
+    console.log(items)
     if (!confirm('Eliminar esta notificacion?')) return;
     await fetch(`${API_URL}/notificaciones/delete_notificacion/${id}`, { method: 'DELETE' });
     fetchData();
@@ -49,14 +51,14 @@ export default function NotificacionesPage() {
       <div className="table-container">
         <table>
           <thead>
-            <tr><th>ID</th><th>Titulo</th><th>Acudiente ID</th><th>Canal</th><th>Estado</th><th>Acciones</th></tr>
+            <tr><th>ID</th><th>Titulo</th><th>Acudiente</th><th>Canal</th><th>Estado</th><th>Acciones</th></tr>
           </thead>
           <tbody>
             {items.length === 0 ? (
               <tr><td colSpan={6} className="empty-state">No hay notificaciones</td></tr>
             ) : items.map(i => (
               <tr key={i.id}>
-                <td>{i.id}</td><td>{i.titulo}</td><td>{i.acudiente_id}</td>
+                <td>{i.id}</td><td>{i.titulo}</td><td>{i.acudiente_nombre}</td>
                 <td><span className="badge badge-blue">{i.canal}</span></td>
                 <td><span className={`badge ${estadoBadge(i.estado)}`}>{i.estado}</span></td>
                 <td>

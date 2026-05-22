@@ -47,68 +47,68 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    gap: '14px',
-    padding: '20px',
-    marginBottom: '18px',
-    borderBottom: '1px solid rgba(255,255,255,0.08)',
-  }}
->
-  <div
-    style={{
-      width: '58px',
-      height: '58px',
-      minWidth: '58px',
-      borderRadius: '16px',
-      background: 'rgba(255,255,255,0.12)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      overflow: 'hidden',
-      boxShadow: '0 6px 18px rgba(0,0,0,0.18)',
-      backdropFilter: 'blur(8px)',
-    }}
-  >
-    <img
-      src="/logo.png"
-      alt="Logo"
-      style={{
-        width: '82%',
-        height: '82%',
-        objectFit: 'contain',
-      }}
-    />
-  </div>
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '14px',
+          padding: '20px',
+          marginBottom: '18px',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+        }}
+      >
+        <div
+          style={{
+            width: '58px',
+            height: '58px',
+            minWidth: '58px',
+            borderRadius: '16px',
+            background: 'rgba(255,255,255,0.12)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            boxShadow: '0 6px 18px rgba(0,0,0,0.18)',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <img
+            src="/logo.png"
+            alt="Logo"
+            style={{
+              width: '82%',
+              height: '82%',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
 
-  <div style={{ display: 'flex', flexDirection: 'column' }}>
-    <h2
-      style={{
-        color: '#fff',
-        margin: 0,
-        fontSize: '20px',
-        fontWeight: '700',
-        lineHeight: '1.1',
-        letterSpacing: '0.3px',
-      }}
-    >
-      Guardería
-    </h2>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <h2
+            style={{
+              color: '#fff',
+              margin: 0,
+              fontSize: '20px',
+              fontWeight: '700',
+              lineHeight: '1.1',
+              letterSpacing: '0.3px',
+            }}
+          >
+            Guardería
+          </h2>
 
-    <span
-      style={{
-        color: 'rgba(255,255,255,0.6)',
-        fontSize: '12px',
-        marginTop: '4px',
-        fontWeight: '500',
-        letterSpacing: '0.4px',
-      }}
-    >
-      Sistema Infantil
-    </span>
-  </div>
-</div>
+          <span
+            style={{
+              color: 'rgba(255,255,255,0.6)',
+              fontSize: '12px',
+              marginTop: '4px',
+              fontWeight: '500',
+              letterSpacing: '0.4px',
+            }}
+          >
+            Sistema Infantil
+          </span>
+        </div>
+      </div>
       <nav className="sidebar-nav">
         {links.filter(l => rolId && l.roles.includes(rolId)).map(link => (
 
