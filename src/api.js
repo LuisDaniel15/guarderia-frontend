@@ -1,7 +1,4 @@
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  "https://guarderia-backend-yelr.onrender.com";
-  
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 export const getHeaders = () => {
   const token = localStorage.getItem('token');
   return {
